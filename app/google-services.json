@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1016565986917",
+    "project_id": "block-de-n",
+    "storage_bucket": "block-de-n.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016565986917:android:8bc643cf847ad99624388c",
+        "android_client_info": {
+          "package_name": "com.nico.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016565986917-t8kf3vrblbdj0j9pak847fd6bg1j23db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc-EHHKSG4Ptl3piclxaFGgfgHQ-0HUFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016565986917-t8kf3vrblbdj0j9pak847fd6bg1j23db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
