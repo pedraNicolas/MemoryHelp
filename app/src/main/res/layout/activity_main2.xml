@@ -6,11 +6,33 @@
     android:layout_height="match_parent"
     android:background="@color/block_de_notas"
     tools:context=".MainActivity2">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/patron_fondo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="275dp"
+        android:layout_height="386dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="170dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/memoryhelp" />
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="30dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,13 +50,20 @@
                 android:layout_height="wrap_content"
                 android:ems="6"
                 android:hint="Usuario"
-                android:maxLines="1">
+                android:maxLines="1"
+                android:textColorHint="#000000"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:hintTextColor="#000000"
+                app:passwordToggleTint="#000000">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/user1EditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/block_de_notas" />
+                    android:layout_gravity="center_vertical"
+                    android:inputType="text"
+                    android:textColor="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -48,15 +77,21 @@
                 android:ems="6"
                 android:hint="Password"
                 android:maxLines="1"
-
-                app:passwordToggleEnabled="true">
+                android:textColorHint="#000000"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#000000"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="#000000"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#5A5A5A">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/pass1EditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/block_de_notas"
-                    android:inputType="textPassword" />
+                    android:layout_gravity="center_vertical"
+                    android:inputType="textPassword"
+                    android:textColor="#000000" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,25 +104,19 @@
                 android:id="@+id/delete1Btn"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:background="@color/block_de_notas"
+                android:layout_gravity="center_horizontal|center_vertical"
+
+                android:background="#00FFFFFF"
                 app:srcCompat="@android:drawable/ic_menu_delete" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/auxEditText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Auxiliar"
-            android:visibility="visible" />
 
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="500dp"
@@ -102,32 +131,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/boton"
             android:text="Guardar" />
 
         <Space
             android:layout_width="8dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/recoveryBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/boton"
             android:text="Mostrar" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/firstActivityBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="129dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/boton"
         android:text="Cerrar Sesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

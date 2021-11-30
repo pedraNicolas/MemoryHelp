@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,20 +23,15 @@ class MainActivity2 : AppCompatActivity() {
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         saveBtn.setOnClickListener {
             if (user1EditText.text.toString().isNotEmpty()) {
-                comparative()
-                if(auxEditText.text.toString()==user1EditText.text.toString()){
-                    showAlert()
-                } else{
-                    saveDates()
-                }
+                saveDates()
                 user1EditText.setText("")
                 pass1EditText.setText("")
             }
-
-
         }
+
         recoveryBtn.setOnClickListener {
             if (user1EditText.text.toString().isNotEmpty()) {
                 pass1EditText.setText("")
@@ -45,33 +41,32 @@ class MainActivity2 : AppCompatActivity() {
                     }
             }
         }
+
         delete1Btn.setOnClickListener {
-            println("holaaaaaaaaaaa")
-
-
-//            db.collection("users").document(user1EditText.text.toString()).delete()
-//            user1EditText.setText("")
-//            pass1EditText.setText("")
-
+            if (user1EditText.text.toString().isNotEmpty()) {
+                db.collection("users").document(user1EditText.text.toString()).delete()
+                user1EditText.setText("")
+                pass1EditText.setText("")
+            }
         }
-
-
     }
+// Funcion para mostrar alerta de confirmacion
 
-    private fun showAlert() {
-        val builder = AlertDialog.Builder(this)
-        builder.setMessage("¿Desea sustituir la contraseña existente?")
-        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
-            Toast.makeText(applicationContext, "OK", Toast.LENGTH_LONG).show()
-        }
-        builder.setNegativeButton(android.R.string.no) { dialog, which ->
-            Toast.makeText(applicationContext, "Cancelado", Toast.LENGTH_LONG).show()
-        }
+//    private fun showAlert() {
+//        val builder = AlertDialog.Builder(this)
+//        builder.setMessage("¿Desea sustituir la contraseña existente?")
+//        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+//            Toast.makeText(applicationContext, "OK", Toast.LENGTH_LONG).show()
+//        }
+//        builder.setNegativeButton(android.R.string.no) { dialog, which ->
+//            Toast.makeText(applicationContext, "Cancelado", Toast.LENGTH_LONG).show()
+//        }
+//
+//        val alertDialog = builder.create()
+//        alertDialog.show()
+//    }
 
-        val alertDialog = builder.create()
-        alertDialog.show()
-    }
-
+    //Funcion para guardar los datos
     private fun saveDates() {
         db.collection("users").document(user1EditText.text.toString()).set(
             hashMapOf(
@@ -81,18 +76,17 @@ class MainActivity2 : AppCompatActivity() {
         )
     }
 
-    private fun comparative() {
-        auxEditText.text = ""
-        val user: LiveData<User> = liveData{
-            val data =
-        }
-        db.collection("users").document(user1EditText.text.toString()).get()
-            .addOnSuccessListener {
-                if (it.exists()) {
-                    auxEditText.text = (it.get("usuario") as String?)
-                } else {
-                    auxEditText.text = (null)
-                }
-            }
-    }
+//    private fun comparative() {
+//        auxEditText.text = ""
+//        val fetchData = liveData {
+//        }
+//        db.collection("users").document(user1EditText.text.toString()).get()
+//            .addOnSuccessListener {
+//                if (it.exists()) {
+//                    auxEditText.text = (it.get("usuario") as String?)
+//                } else {
+//                    auxEditText.text = (null)
+//                }
+//            }
+//    }
 }

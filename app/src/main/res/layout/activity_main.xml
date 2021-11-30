@@ -4,32 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/block_de_notas"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/patron_fondo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="271dp"
+        android:layout_height="282dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/memoryhelp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="15dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/secondActivityBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Al layout 2" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/googleBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:paddingLeft="16dp"
+            android:text="Ingresar con Google"
+            android:textAlignment="center"
+            android:textColor="#000" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="120dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
